@@ -1,6 +1,14 @@
 <h1>Movies from 2014</h1>
 <form action="" method="GET">
-    <input class="form-control" id="qinput" name="q" type="search" name="title" placeholder="Enter a movie title" required>
+    <input type="text"
+        class="form-control" 
+        id="titleInput" 
+        type="search" 
+        name="title" 
+        value="<?= htmlentities($title) ?>"
+        placeholder="Enter a movie title" 
+        required
+        >
 </form>
 <table class="table">
     <thead>
@@ -13,16 +21,16 @@
         <?php foreach($movies as $movie): ?>
         <tr>
             <td>
-                <?= htmlentities($movie['title']) ?>                     
+                <a href="selected-movie.php"><?= $movie['title'] ?></a>                     
             </td>  
             <td>
-                <?= htmlentities($movie['released']) ?>                 
+                <?= $movie['released'] ?>                 
             </td>  
             <td>
-                <?= htmlentities($movie['tickets']) ?>                 
+                <?= number_format($movie['tickets']) ?>                 
             </td>  
              <td>
-                <?= htmlentities($movie['gross']) ?>                 
+                <?= '$' . number_format($movie['gross']) ?>                 
             </td>     
         </tr>
         <?php endforeach; ?>           

@@ -2,6 +2,8 @@
 require_once 'connection.php';
 require_once 'models/movie-model.php';
 
+$title = $_GET['title'];
+
 $conn = getConnection();
 $movieModel = new Movies($conn);
 $movies = $movieModel->getAllMovies();
