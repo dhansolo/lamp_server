@@ -2,11 +2,17 @@
 require_once 'connection.php';
 require_once 'models/movie-model.php';
 
-$title = $_GET['title'];
+$title = $_GET['title']; //gets query string after the word 'title'
+if(isset($title)) {
+    if(empty($title)) {
+        //set to nothing
+    }
+}
 
-$conn = getConnection();
-$movieModel = new Movies($conn);
-$movies = $movieModel->getAllMovies();
+$conn = getConnection(); //makes connection with database
+$movieModel = new Movies($conn); // Creates a new movie model with the connection
+$movies = $movieModel->getAllMovies($title); //Calls getAllMovies() to do just that
+
 
 /*echo '<pre>';
 var_dump($movies);
@@ -24,7 +30,8 @@ echo '</pre>';*/
 </head>
 <body class="container">
     <?php 
-        include 'views/search-movies.php';
+        include 'views/search-movies.php'; //Shows the main view page
+        include 'views/selected-movie.php';
     ?>   
 </body>
 </html>

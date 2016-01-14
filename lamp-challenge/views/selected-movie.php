@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> <?= $movie['title'] ?></title>
+    <title>Yo</title>
 </head>
 <body>
     

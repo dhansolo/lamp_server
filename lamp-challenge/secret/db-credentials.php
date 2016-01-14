@@ -1,12 +1,6 @@
 <?php 
 $dbHost = 'localhost';
 $dbDatabase = 'lampServer';
-<<<<<<< HEAD
 $dbUser = 'lampuser';
-$dbPassword = '';
+$dbPassword = '5FF2B022-AE0B-4919-9766-2E36D6FE0AE8';
 ?>
-=======
-$dbUser = 'lampserveruser';
-$dbPassword = '';
-?>
->>>>>>> fbc018f3a90d4f0cd4c9f7bf599c3754d950143d
