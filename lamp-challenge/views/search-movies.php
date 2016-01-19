@@ -1,12 +1,15 @@
 <h1>Movies from 2014</h1>
 <form action="" method="GET">
-    <input type="text"
-        id="titleInput" 
-        name="title"
-        class="form-control" 
-        placeholder="Enter a movie title" 
-        required
-        >
+    <div class="form-group">
+        <input type="text"
+            id="titleInput" 
+            name="title"
+            class="form-control" 
+            value="<?= htmlentities($title) ?>"
+            placeholder="Enter a movie title or keyword" 
+            required
+            >
+     </div>
 </form>
 <table class="table">
     <thead>
@@ -19,7 +22,7 @@
         <?php foreach($movies as $movie): ?>
         <tr>
             <td>
-                <a href="views/selected-movie.php"><?= $movie['title'] ?></a>                    
+                <a href="./movie.php?id=<?= $movie['ID']?>"><?= $movie['title']?></a>                    
             </td>  
             <td>
                 <?= date('j-M-Y', strtotime($movie['released'])) ?>             
