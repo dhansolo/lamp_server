@@ -13,13 +13,12 @@ if(isset($_GET['id']) && $_GET['id'] !='') { //determines if there is anything a
 }
 
 $imdbID = ($movie[0]['imdb_id']);
-$url = '';
+$array = ($movie[0]);
+$found = true;
 if(empty($imdbID)) {
-    $title = ($movie[0]['title']);
-    $formattedtitle = preg_replace('/\s+/', '+', $title);
-    $url = "http://www.omdbapi.com/?t=$formattedtitle&tomatoes=true";
-    $json = file_get_contents($url);
-    $result = json_decode($json, true);
+    $found = false;
+    $jsonmovie = json_encode($array);
+    $result = json_decode($jsonmovie, true);
 } else {
     $url = "http://www.omdbapi.com/?i=$imdbID&tomatoes=true";
     $json = file_get_contents($url);
@@ -37,7 +36,11 @@ if(empty($imdbID)) {
 </head>
 <body class="container">
     <?php 
-        include 'views/selected-movie.php'; //Shows the selected movie in more detail
+        if($found) {
+            include 'views/selected-movie.php'; //Shows the selected movie in more detail    
+        } else {
+            include 'views/unfound-selected-movie.php';   
+        }
     ?>   
 </body>
 </html>
