@@ -1,5 +1,5 @@
 <h1>Movies from 2014</h1>
-<a href="https://github.com/dhansolo/lamp_server.git">Github repo</a>
+<a href="https://github.com/INFO344-win-2016/challenges-dhansolo.git">Github repo</a>
 <form action="" method="GET">
     <div class="form-group">
         <input type="text"
