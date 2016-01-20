@@ -33,6 +33,7 @@ if(empty($imdbID)) {
     <title>LAMP Server</title>
     <link type="text/css" rel="stylesheet" href="stylesheets/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 </head>
 <body class="container">
     <?php 
